@@ -56,8 +56,8 @@ Ten pakiet zawiera statyczną wersję biblioteki flam3.
 %prep
 %setup -q -n %{name}-%{version}/src
 
-# drop redundant -O3 flag
-%{__sed} -i 's,-O3,,' Makefile.am
+# drop redundant opt flags
+%{__sed} -i 's,-g -O3,,' Makefile.am
 
 %build
 %{__libtoolize}
